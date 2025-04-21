@@ -1,0 +1,574 @@
+/*website-wide style*/
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    font-variation-settings: "wdth" 200;
+    padding: 5px;
+    margin: 5px;
+}
+.website-container {
+    display: grid;
+    grid-template-areas: 
+    'header header '
+    'nav nav '
+    'sidebar main';
+    grid-template-columns: 1fr 3fr;
+}
+header {
+    grid-area: header;
+    background-color: #F4745E;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+
+}  
+header h1 {
+    font-size: 75px;
+    font-weight: 400;
+}
+header img {
+    width: 200px;
+    height: auto;
+}
+nav {
+    grid-area: nav;
+    background-color: #A8D0DB;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px 0;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    background-color: #A8D0DB;
+    font-size: 20px;
+    font-weight: 250;
+    margin-right: 25px;
+}
+nav a.active {
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.sidebar {
+    grid-area: sidebar; 
+    background-color: #F4745E;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    height: auto;
+}
+.sidebar .sub-sidebar {
+    background-color: #FFBCB5;
+    border-radius: 8px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 96%;
+}
+.sidebar .sub-sidebar h3 {
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: -8px;
+}
+.sidebar .sub-sidebar p {
+    margin-bottom: -5px;
+}
+.sidebar .sub-sidebar .sidebar-links{
+    color: black;
+}
+.sidebar .sub-sidebar .socials {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: 5px;
+}
+.sidebar .sub-sidebar .socials-img {
+    width: 30px;
+    height: auto;
+}
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+main {
+    grid-area: main;
+    background-color: #FFEBF3;
+}
+main h2 {
+    font-size: 40px;
+    font-weight: 275;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+
+
+
+
+/*Home Container*/
+.home-container {
+    display: grid;
+    grid-template-areas: 
+    'home-header'
+    'home-intro'
+    'home-gallery'
+    'home-video';
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 0.5fr 2fr 1fr;
+}
+#home-header {
+    grid-area: home-header;
+}
+#home-intro {
+    grid-area: home-intro; 
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+}
+.home-gallery {
+    grid-area: home-gallery; 
+    background-color: #1446A0;
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+.home-gallery h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+.home-gallery .home-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+}
+.home-gallery .home-images img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.home-gallery .home-images img:hover {
+    transform: scale(1.05);
+}
+.home-gallery .spotlight {
+    display: none;
+    position: fixed;/*doesn't move*/
+    z-index: 999;/*overlays all other content on page, stack*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /*alpha=opacity*/
+    justify-content: center;
+    align-items: center;
+}
+.home-gallery .spotlight img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.home-video {
+    grid-area: home-video;
+    background-color: #4981E9;
+    display: flex;
+    align-items: row wrap;
+    border-radius: 8px;
+}
+.home-video p {
+    width: 42%;
+    padding: 100px 10px;
+    color: white;
+}
+  
+
+/*About Container*/
+.visitorInfo-container {
+    display: grid;
+    grid-template-areas: 
+    'visitorInfo-header visitorInfo-header'
+    'visitorInfo-hrs visitorInfo-fares'
+    'visitorInfo-faq visitorInfo-faq';
+    grid-template-rows: 0.15fr 2fr 1fr;
+}
+#visitor-header {
+    grid-area: visitorInfo-header;
+}
+#visitor-hours-loco {
+    grid-area: visitorInfo-hrs;
+}
+#visitor-fares {
+    grid-area: visitorInfo-fares;
+}
+.visitorInfo1 {
+    background-color: white;
+    border-radius: 8px;
+
+}
+.visitorInfo1 img, iframe{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+}
+#visitor-FAQ {
+    grid-area: visitorInfo-faq;
+    background-color: #4981E9;
+    border-radius: 8px;
+    color: white;
+}
+#fareNote {
+    font-weight: 500;
+}
+
+
+
+/*About Container*/
+.about-container {
+    display: grid;
+    grid-template-areas: 
+    'about-header about-header'
+    'about-history about-history'
+    'about-facts about-tours';
+    grid-template-rows: 0.25fr 1.75fr 1fr;
+}
+#about-header {
+    grid-area: about-header;
+}
+.about-history { 
+    grid-area: about-history;
+    background-color: white;
+    border-radius: 8px;
+}
+.about-history p {
+    font-weight: 325;
+    margin-bottom: 10px;
+}
+#history4 {
+    font-weight: 445;
+}
+#about-readLess, #about-readMore{
+    background-color: #A8D0DB;       
+    border: 2px solid black;     
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+#about-readLess{
+    display: none;
+}
+.about-more {
+    display: none;
+}
+.about-img {
+    height: auto;
+    width: 25%;
+}
+.about-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+.about-facts {
+    grid-area: about-facts;
+    background-color: #1446A0;
+    border-radius: 8px;
+}
+.about-facts p {
+    color: white;
+}
+.about-facts h3 {
+    color: white;
+}
+.about-tours {
+    grid-area: about-tours;
+    background-color: #4981E9;
+    border-radius: 8px;
+}
+.about-tours p {
+    color: white;
+}
+.about-tours h3 {
+    color: white;
+}
+.about-tours .tours-links {
+    color: white;
+    font-weight: 350;
+    text-align: center;
+}
+
+
+
+
+
+/*Gift Shop Container*/
+.giftShop-container {
+    display: grid;
+    grid-template-areas: 
+    'gift-header'
+    'gift-items';
+    grid-template-rows: 0.09fr 1fr;
+}
+.gift-items {
+    grid-area: gift-items;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+}
+.gift-items img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+
+/*About Container*/
+.contact-container {
+    display: grid;
+    grid-template-areas: 
+    'contact-header contact-header'
+    'contact-form contact-table';
+    grid-template-rows: 0.09fr 1fr;
+
+}
+#contact-header {
+    grid-area: contact-header;
+}
+.contactForm {
+    grid-area: contact-form;
+    background-color: #1446A0;
+    border-radius: 8px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+.contact-table { 
+    grid-area: contact-table;
+    background-color: white;
+    border-radius: 8px;
+    padding: 60px;
+    height: 50%;
+}
+th {
+    padding:12px;
+    background-color: #1446A0;
+    color: white;
+    width: fit-content;
+}
+tr:nth-child(odd) {
+    background-color: #4981E9;
+    color: white;
+
+}
+tr:nth-child(even) {
+    background-color: white;
+    color: black;
+
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+
+.citations h3 {
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 650px) {
+    /*General*/
+    .website-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    header, nav, .sidebar, main, footer {
+        width: 100%;
+        padding: 10px;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 36px;
+    }
+    header img {
+        width: 120px;
+        height: auto;
+        margin-top: 10px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    nav a {
+        margin: 4px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+  
+    /*Sidebar*/
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px; 
+    }
+    .sub-sidebar {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+        text-align: center;
+    }
+  
+    /*Home*/
+    .home-gallery .home-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .home-gallery .home-images img {
+        width: 90%;
+        height: auto;
+    }
+    .home-video {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-video iframe {
+        width: 100%;
+        height: auto;
+    }
+    .home-video p {
+        padding: 16px;
+        font-size: 14px;
+        width: 90%;
+    }
+
+    /*Visitor Info*/
+    .visitorInfo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .visitorInfo1,
+    .visitorInfo2 {
+        width: 100%;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    .visitorInfo1 iframe,
+    .visitorInfo1 img {
+        width: 100%;
+        height: auto;
+    }
+
+    /*About Page*/
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+    #about-header {
+        text-align: center;
+        font-size: 30px;
+        padding: 10px;
+    }
+    .about-history,
+    .about-facts,
+    .about-tours {
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+    }
+    .about-history p,
+    .about-facts p,
+    .about-tours p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .about-facts h3,
+    .about-tours h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .about-imgs {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .about-img {
+        width: 80%;
+        height: auto;
+        border-radius: 6px;
+    }
+
+    /* Gift Shop layout */
+    .giftShop-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    #gift-header {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .gift-items {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 10px;
+    }
+    .gift-items img {
+        width: 90%;
+        height: auto;
+        border-radius: 6px;
+    }
+    .gift-items p {
+        width: 90%;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer p {
+      font-size: 12px;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  
